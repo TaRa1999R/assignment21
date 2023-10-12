@@ -1,4 +1,6 @@
-import pysynth as ps
-test = (('c', 4), ('e', 4), ('g', 4),
-		('c5', -2), ('e6', 8), ('d#6', 2))
-ps.make_wav(test, fn = "music/test.wav")
+import pysynth_b as ps
+song = (('c', -3), ('c', -2), ('d', -3), ('c', -2), ('f', -2), ('e', 1), 
+        ('c', -3), ('c', -2), ('d', -3), ('c', -2), ('g', -2), ('f', 1), 
+        ('c', -3), ('c', -2), ('c', -3), ('a', -2), ('g', -2), ('e', -3), ('d', 1), 
+        ('a#', -3), ('a#', -2), ('a', -3), ('f', -2), ('g', -2), ('f', -2))
+ps.make_wav(song, fn = "music/Happy_Birthday.wav")
