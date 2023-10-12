@@ -15,7 +15,13 @@ def show_menue () :
     print (" 5- Exit \n")
 
 def add () :
-    ...
+    global cur
+    global con
+    name = input (" Enter the name of new product : ")
+    price = int ( input (" Enter price of new product : "))
+    count = int ( input (" Enter number of new product : "))
+    cur.execute (f"INSERT INTO products (Name , Price , Count) VALUES ('{name}' , {price} , {count})")
+    con.commit ()
 
 def edit () :
     ...
