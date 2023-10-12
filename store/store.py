@@ -22,12 +22,18 @@ def add () :
     count = int ( input (" Enter number of new product : "))
     cur.execute (f"INSERT INTO products (Name , Price , Count) VALUES ('{name}' , {price} , {count})")
     con.commit ()
+    print (" Done ✅")
 
 def edit () :
     ...
 
 def delete () :
-    ...
+    global con
+    global cur
+    id = int ( input (" Enter the id of the product you want to delete : "))
+    cur.execute (f"DELETE FROM products WHERE ProductId = {id}")
+    con.commit ()
+    print (" Done ✅")
 
 print ("\n Hello! Welcome to my store 😊")
 print (" Loading ... ⏳")
