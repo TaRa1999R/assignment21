@@ -15,8 +15,8 @@ def show_menue () :
     print (" 5- Exit \n")
 
 def add () :
-    global cur
     global con
+    global cur
     name = input (" Enter the name of new product : ")
     price = int ( input (" Enter price of new product : "))
     count = int ( input (" Enter number of new product : "))
@@ -25,7 +25,25 @@ def add () :
     print (" Done ✅")
 
 def edit () :
-    ...
+    global con
+    global cur
+    id = int ( input (" Enter the id of the product you want to edit : "))
+    change = input (" Which property from this product you want to edit (Name , Price , Count) : ")
+    if change == "Name" :
+        new = input (" Enter edited information : ")
+        cur.execute (f"UPDATE products SET {change} = '{new}' WHERE ProductId = {id}")
+        con.commit ()
+        print (" Done ✅")
+    
+    elif change == "Price" or change == "Count" :
+        new = int ( input (" Enter edited information : "))
+        cur.execute (f"UPDATE products SET {change} = {new} WHERE ProductId = {id}")
+        con.commit ()
+        print (" Done ✅")
+    
+    else :
+        print (" Wronge property ❌")
+        print (f" There is not any property as '{change}' ")
 
 def delete () :
     global con
